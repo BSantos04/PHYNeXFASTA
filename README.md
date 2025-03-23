@@ -17,9 +17,9 @@ This project consists solely as a challenge to create a Python script that conve
 ## Other flags
 `--outname:` Specifies the output filename. If not specified, the script will use the same filename as the input file by default.
 
-`--outgroup:` A useful option when converting to the NeXus format. Since the script also creates a MrBayes block with some default features, you can also specify the outgroup species in it using that flag.
+`--outgroup:` An useful option when converting to the NeXus format. Since the script also creates a MrBayes block with some default features, you can also specify the outgroup species in it using that flag.
 
-### A more detailed example
+### More detailed example
 `python3 PHYNeXFASTA.py --infile example.fasta --format nex --outname test --outgroup Podarcis`
 
 # License 
