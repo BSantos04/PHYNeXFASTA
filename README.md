@@ -1,1 +1,1 @@
-# PhyNeXFASTA
+# PHYNeXFASTA
