@@ -213,9 +213,9 @@ if __name__ == "__main__":
     # Recognize the format of the input file based on it's first line
     if identifier[0].startswith(">"):
         file_dict = fasta_to_dict(args.infile)
-    if identifier[0]=="#NEXUS":
+    elif identifier[0].strip() == "#NEXUS":
         file_dict = nexus_to_dict(args.infile)
-    if identifier[0].isdigit():
+    elif identifier[0].isdigit():
         file_dict = phylip_to_dict(args.infile)
     else:
         # Exit the program if it doesn't recognize the file format
@@ -228,19 +228,20 @@ if __name__ == "__main__":
         # Based on the selected output format, it will convert the dictionary into a file of the specified format
         # If a filename is specified, it will use that filename
         if args.outname:
-            if args.format.upper() == "FASTA":
+            if args.format.upper() == "FASTA" or args.format.upper() == "FA":
                 dict_to_fasta(file_dict, outname=args.outname)
-            if args.format.upper() == "NEXUS":
+            if args.format.upper() == "NEXUS" or args.format.upper() == "NEX":
                 dict_to_nexus(file_dict, outname=args.outname, outgroup = args.outgroup)
-            if args.format.upper() == "PHYLIP":
+            if args.format.upper() == "PHYLIP" or args.format.upper() == "PHY":
                 dict_to_phylip(file_dict, outname=args.outname)
         else:
             filename = args.infile.split(".")[0]
-            if args.format.upper() == "FASTA":
+            if args.format.upper() == "FASTA" or args.format.upper() == "FA":
                 dict_to_fasta(file_dict, outname=filename)
-            if args.format.upper() == "NEXUS":
+            if args.format.upper() == "NEXUS" or args.format.upper() == "NEX":
                 dict_to_nexus(file_dict, outname=filename, outgroup = args.outgroup)
-            if args.format.upper() == "PHYLIP":
+            if args.format.upper() == "PHYLIP" or args.format.upper() == "PHY":
                 dict_to_phylip(file_dict, outname=filename)
     else:
         print("The sequences must be aligned!!!")
+        sys.exit(1)
