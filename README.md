@@ -2,9 +2,9 @@
 This project was a challenge that involved creating a Python script to convert files between three different formats (FASTA, NeXus, and PHYLIP) without using any external packages or modules.
 
 # Requisities 
--Python >= v3.6 (tested with Python v3.12.2)
+- Python >= v3.6 (tested with Python v3.12.2)
 
-# Instalation
+# Installation
 `git clone https://github.com/BSantos04/PHYNeXFASTA.git` 
 
 # Usage
